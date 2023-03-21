@@ -23,3 +23,15 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
         cname: fotografie.timon-may.de
+  
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Copy Quellen.txt into the sources directory
+      run: cp Quellen.txt src/
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: sources
+        path: src/
