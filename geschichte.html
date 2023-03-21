@@ -1,390 +1,411 @@
 <!DOCTYPE html>
 <html>
-    <style>
-    @import url(https://fonts.googleapis.com/css?family=Lato);
-html, body {
-  padding: 0;
-  margin: 0;
-  height: 100%;
-}
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Lato);
 
-html {
-  font: 1em/1.5 "Lato", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizelegibility;
-}
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+  }
 
-body {
-  font-size: 1.3em;
-}
+  html {
+    font: 1em/1.5 "Lato", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizelegibility;
+  }
 
-header {
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  background: url(images/geschichte.webp) center no-repeat;
-  /* Image Credit: Unsplash.me */
-  background-size: cover;
-}
-header .content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-}
-header h1, header h2 {
-  margin: 0;
-}
-header h2 {
-  text-transform: uppercase;
-  margin-top: -.5em;
-}
-header hgroup {
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  display: inline-block;
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  color: #fff;
-  border: 5px solid #fff;
-  padding: .5em 3em;
-  background-color: rgba(0, 0, 0, 0.2);
-  z-index: 2;
-}
-header .overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background:#333 center no-repeat;
-  background-size: cover;
-  z-index: 0;
-  opacity: 0;  -webkit-filter: blur(4px);
-}
-img{
-  margin-right:20px
-}
-.site {
-  padding: 20em 0;
-  text-align: center;
-  background-color: #efefef;
-  font-size: .8em;
-  color: #444;
-  position:relative
-}
-.site a {
-  color: #666;
-  text-decoration: none;
-}
-.site a:hover {
-  color: #222;
-}
+  body {
+    font-size: 1.3em;
+  }
 
-.site nav{
-  position:absolute;
-  top:0;
-  left:0;
-  background:#222;
-  width:100%
-}
-.site nav a{
-  padding:10px 30px;
-  font-size:1.3em;
-  display:inline-block
-}
-.site nav a:hover{
-  background:#333;
-  color:#fff
-}
+  header {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background: url(images/geschichte.webp) center no-repeat;
+    /* Image Credit: Unsplash.me */
+    background-size: cover;
+  }
+
+  header .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  header h1,
+  header h2 {
+    margin: 0;
+  }
+
+  header h2 {
+    text-transform: uppercase;
+    margin-top: -.5em;
+  }
+
+  header hgroup {
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    border: 5px solid #fff;
+    padding: .5em 3em;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 2;
+  }
+
+  header .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: #333 center no-repeat;
+    background-size: cover;
+    z-index: 0;
+    opacity: 0;
+    -webkit-filter: blur(4px);
+  }
+
+  img {
+    margin-right: 20px
+  }
+
+  .site {
+    padding: 20em 0;
+    text-align: center;
+    background-color: #efefef;
+    font-size: .8em;
+    color: #444;
+    position: relative
+  }
+
+  .site a {
+    color: #666;
+    text-decoration: none;
+  }
+
+  .site a:hover {
+    color: #222;
+  }
+
+  .site nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #222;
+    width: 100%
+  }
+
+  .site nav a {
+    padding: 10px 30px;
+    font-size: 1.3em;
+    display: inline-block
+  }
+
+  .site nav a:hover {
+    background: #333;
+    color: #fff
+  }
 </style>
 <script>
-    var $content = $('header .content')
-  , $blur    = $('header .overlay')
-  , wHeight  = $(window).height();
+  var $content = $('header .content')
+    , $blur = $('header .overlay')
+    , wHeight = $(window).height();
 
-$(window).on('resize', function(){
-  wHeight = $(window).height();
-});
+  $(window).on('resize', function () {
+    wHeight = $(window).height();
+  });
 
-window.requestAnimFrame = (function()
-{
-  return  window.requestAnimationFrame       ||
-          window.webkitRequestAnimationFrame ||
-          window.mozRequestAnimationFrame    ||
-          function( callback ){
-            window.setTimeout(callback, 1000 / 60);
-          };
-})();
+  window.requestAnimFrame = (function () {
+    return window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      function (callback) {
+        window.setTimeout(callback, 1000 / 60);
+      };
+  })();
 
-function Scroller()
-{
-  this.latestKnownScrollY = 0;
-  this.ticking            = false;
-}
-
-Scroller.prototype = {
- 
-  init: function() {
-    window.addEventListener('scroll', this.onScroll.bind(this), false);
-    $blur.css('background-image',$('header:first-of-type').css('background-image'));
-  },
-
-
-  onScroll: function() {
-    this.latestKnownScrollY = window.scrollY;
-    this.requestTick();
-  },
-
-  
-  requestTick: function() {
-    if( !this.ticking ) {
-      window.requestAnimFrame(this.update.bind(this));
-    }
-    this.ticking = true;
-  },
-
-  update: function() {
-    var currentScrollY = this.latestKnownScrollY;
-    this.ticking       = false;
-    
-    
-    var slowScroll = currentScrollY / 2
-      , blurScroll = currentScrollY * 2
-      , opaScroll = 1.4 - currentScrollY / 400;
-   if(currentScrollY > wHeight)
-     $('nav').css('position','fixed');
-   else
-     $('nav').css('position','absolute');
-    
-    $content.css({
-      'transform'         : 'translateY(' + slowScroll + 'px)',
-      '-moz-transform'    : 'translateY(' + slowScroll + 'px)',
-      '-webkit-transform' : 'translateY(' + slowScroll + 'px)',
-      'opacity' : opaScroll
-    });
-    
-    $blur.css({
-      'opacity' : blurScroll / wHeight
-    });
+  function Scroller() {
+    this.latestKnownScrollY = 0;
+    this.ticking = false;
   }
-};
+
+  Scroller.prototype = {
+
+    init: function () {
+      window.addEventListener('scroll', this.onScroll.bind(this), false);
+      $blur.css('background-image', $('header:first-of-type').css('background-image'));
+    },
 
 
-var scroller = new Scroller();  
-scroller.init();
+    onScroll: function () {
+      this.latestKnownScrollY = window.scrollY;
+      this.requestTick();
+    },
+
+
+    requestTick: function () {
+      if (!this.ticking) {
+        window.requestAnimFrame(this.update.bind(this));
+      }
+      this.ticking = true;
+    },
+
+    update: function () {
+      var currentScrollY = this.latestKnownScrollY;
+      this.ticking = false;
+
+
+      var slowScroll = currentScrollY / 2
+        , blurScroll = currentScrollY * 2
+        , opaScroll = 1.4 - currentScrollY / 400;
+      if (currentScrollY > wHeight)
+        $('nav').css('position', 'fixed');
+      else
+        $('nav').css('position', 'absolute');
+
+      $content.css({
+        'transform': 'translateY(' + slowScroll + 'px)',
+        '-moz-transform': 'translateY(' + slowScroll + 'px)',
+        '-webkit-transform': 'translateY(' + slowScroll + 'px)',
+        'opacity': opaScroll
+      });
+
+      $blur.css({
+        'opacity': blurScroll / wHeight
+      });
+    }
+  };
+
+
+  var scroller = new Scroller();
+  scroller.init();
 </script>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/style.css">
-        <script src="js/modernizr.js"></script>
-        <script.bg-cover {
-            background-size: cover;
-        }
-        body {
-            min-height: 1080vh;
-        }>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/modernizr.js"></script>
+  <script.bg-cover { background-size: cover; } body { min-height: 1080vh; }>
     </script>
-          
-        <title>Geschichte</title>
 
-        <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700|Unica+One' rel='stylesheet' type='text/css'>
-	<!-- Themify Icons -->
-	<link rel="stylesheet" href="css/themify-icons.css">
-	<!-- Icomoon Icons -->
-	<link rel="stylesheet" href="css/icomoon-icons.css">
-	<!-- Bootstrap -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
-	<!-- Easy Responsive Tabs -->
-	<link rel="stylesheet" href="css/easy-responsive-tabs.css">
-	<!-- Theme Style -->
-	<link rel="stylesheet" href="css/stylegeschichte.css">
-    </head>
-    <body>
-        <nav class="cd-stretchy-nav">
-            <a class="cd-nav-trigger" href="#0">
-                <span aria-hidden="true"></span>
-            </a>
-    
-            <ul>
-                <li><a href="index.html"><span>Home</span></a></li>
-                <li><a href="geschichte.html" class="active"><span>Geschichte</span></a></li>
-                <li><a href="genres.html"><span>Genres</span></a></li>
-                <li><a href="hardware.html"><span>Hardware</span></a></li>
-                <li><a href="software.html"><span>Software</span></a></li>
-            </ul>
-    
-            <span aria-hidden="true" class="stretchy-nav-bg"></span>
-        </nav>
-    
-        <header>
-            <div class="content">
-              <hgroup>
-                <h1>GESCHICHTE</h1>
-                <i>Der Fotografie</i>
-              </hgroup>
+    <title>Geschichte</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700|Unica+One' rel='stylesheet' type='text/css'>
+    <!-- Themify Icons -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- Icomoon Icons -->
+    <link rel="stylesheet" href="css/icomoon-icons.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- Easy Responsive Tabs -->
+    <link rel="stylesheet" href="css/easy-responsive-tabs.css">
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="css/stylegeschichte.css">
+</head>
+
+<body>
+  <nav class="cd-stretchy-nav">
+    <a class="cd-nav-trigger" href="#0">
+      <span aria-hidden="true"></span>
+    </a>
+
+    <ul>
+      <li><a href="index.html"><span>Home</span></a></li>
+      <li><a href="geschichte.html" class="active"><span>Geschichte</span></a></li>
+      <li><a href="genres.html"><span>Genres</span></a></li>
+      <li><a href="hardware.html"><span>Hardware</span></a></li>
+      <li><a href="software.html"><span>Software</span></a></li>
+    </ul>
+
+    <span aria-hidden="true" class="stretchy-nav-bg"></span>
+  </nav>
+
+  <header>
+    <div class="content">
+      <hgroup>
+        <h1>GESCHICHTE</h1>
+        <i>Der Fotografie</i>
+      </hgroup>
+    </div>
+    <div class="overlay"></div>
+  </header>
+  <main role="main">
+
+    <div class="fh5co-spacer fh5co-spacer-lg"></div>
+
+    <!-- Section Half -->
+    <div class="fh5co-half">
+      <div class="fh5co-half-img fh5co-50" style="background-image: url(images/altekamera.png)"></div>
+      <div class="fh5co-half-text fh5co-50 fh5co-right">
+        <div class="fh5co-text">
+
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-9 col-md-push-1 col-sm-9 col-sm-push-1">
+                <div class="fh5co-section-title text-left">
+                  <h2 class="fh5co-title">Die Ersten Kameras</h2>
+                </div>
+                <p>
+                  Der Name "Kamera" ist Abgeleitet von der "Camera Obscura", die jedoch keine Bilder Festhalten,
+                  sondern nur darstellen konnte. Deswegen werden Kameras wie links abgebildet als erste Kameras
+                  in dem Sinne betrachtet. Sie haben sogar einige ähnlichkeiten zu den Kameras wie wir so heute
+                  kennen. Sie hatten (chemische) Sensoren und verstellbare Objektive, wobei diese nocht nicht so
+                  Komplex waren wie heutige.
+                </p>
+                <div class="fh5co-spacer fh5co-spacer-xxs"></div>
+              </div>
             </div>
-            <div class="overlay"></div>
-        </header>
-        <main role="main">
+          </div>
 
-        <div class="fh5co-spacer fh5co-spacer-lg"></div>
-        
-        <!-- Section Half -->
-        <div class="fh5co-half">
-            <div class="fh5co-half-img fh5co-50" style="background-image: url(images/altekamera.png)"></div>
-            <div class="fh5co-half-text fh5co-50 fh5co-right">
-                <div class="fh5co-text">
-                    
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-9 col-md-push-1 col-sm-9 col-sm-push-1">
-                                <div class="fh5co-section-title text-left">
-                                    <h2 class="fh5co-title">Die Ersten Kameras</h2>
-                                </div>
-                                <p>
-                                    Der Name "Kamera" ist Abgeleitet von der "Camera Obscura", die jedoch keine Bilder Festhalten,
-                                    sondern nur darstellen konnte. Deswegen werden Kameras wie links abgebildet als erste Kameras
-                                    in dem Sinne betrachtet. Sie haben sogar einige ähnlichkeiten zu den Kameras wie wir so heute
-                                    kennen. Sie hatten (chemische) Sensoren und verstellbare Objektive, wobei diese nocht nicht so
-                                    Komplex waren wie heutige.
-                                </p>		
-                                <div class="fh5co-spacer fh5co-spacer-xxs"></div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
+        </div>
+      </div>
+    </div>
+    <!-- Section Half -->
+
+    <div class="fh5co-spacer fh5co-spacer-lg"></div>
+
+    <!-- Testimonial -->
+    <div class="container">
+      <div class="fh5co-section-title text-center">
+        <h2 class="fh5co-title">Camera Obscura</h2>
+      </div>
+      <br class="fh5co-spacer fh5co-spacer-sm">
+      <div class="owl-carousel-fullwidth">
+        <div class="item">
+          <p class="text-center quote">&ldquo;Design must be functional and functionality must be translated into visual
+            aesthetics, without any reliance on gimmicks that have to be explained. &rdquo; <cite class="author">&mdash;
+              Ferdinand A. Porsche</cite></p>
+        </div>
+        <div class="fh5co-section-title text-center">
+          <h2 class="fh5co-title">Camera Obscura</h2>
+        </div>
+        <br class="fh5co-spacer fh5co-spacer-sm">
+        <div class="item">
+          <p class="text-center quote">&ldquo;Creativity is just connecting things. When you ask creative people how
+            they did something, they feel a little guilty because they didn’t really do it, they just saw something. It
+            seemed obvious to them after a while. &rdquo;<cite class="author">&mdash; Steve Jobs</cite></p>
+        </div>
+        <div class="item">
+          <p class="text-center quote">&ldquo;I think design would be better if designers were much more skeptical about
+            its applications. If you believe in the potency of your craft, where you choose to dole it out is not
+            something to take lightly. &rdquo;<cite class="author">&mdash; Frank Chimero</cite></p>
+        </div>
+      </div>
+    </div>
+    <!-- Testimonial -->
+
+    <div class="fh5co-spacer fh5co-spacer-lg"></div>
+
+    <!-- Press -->
+    <div class="fh5co-press">
+      <div class="container">
+
+        <div class="fh5co-section-title text-center">
+          <h2 class="fh5co-title">Press</h2>
+        </div>
+        <div class="fh5co-spacer fh5co-spacer-sm"></div>
+        <div class="row">
+
+          <div class="col-md-6">
+            <!-- Press Item -->
+            <div class="fh5co-press-item">
+              <div class="fh5co-press-img" style="background-image: url(images/slide_2.jpg)">
+              </div>
+              <div class="fh5co-press-text">
+                <h3 class="h2 fh5co-press-title">Simplicity <span class="fh5co-border"></span></h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis eius quos similique suscipit
+                  dolorem cumque vitae qui molestias illo accusantium...</p>
+              </div>
             </div>
-        </div>
-        <!-- Section Half -->
+            <!-- Press Item -->
+          </div>
 
-        <div class="fh5co-spacer fh5co-spacer-lg"></div>
-        
-        <!-- Testimonial -->
-        <div class="container">
-                <div class="fh5co-section-title text-center">
-                    <h2 class="fh5co-title">Camera Obscura</h2>
-                </div>
-                <br class="fh5co-spacer fh5co-spacer-sm">
-                <div class="owl-carousel-fullwidth">
-                    <div class="item">
-                        <p class="text-center quote">&ldquo;Design must be functional and functionality must be translated into visual aesthetics, without any reliance on gimmicks that have to be explained. &rdquo; <cite class="author">&mdash; Ferdinand A. Porsche</cite></p>
-                    </div>
-                    <div class="fh5co-section-title text-center">
-                        <h2 class="fh5co-title">Camera Obscura</h2>
-                    </div>
-                    <br class="fh5co-spacer fh5co-spacer-sm">
-                    <div class="item">
-                        <p class="text-center quote">&ldquo;Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn’t really do it, they just saw something. It seemed obvious to them after a while. &rdquo;<cite class="author">&mdash; Steve Jobs</cite></p>
-                    </div>
-                    <div class="item">
-                        <p class="text-center quote">&ldquo;I think design would be better if designers were much more skeptical about its applications. If you believe in the potency of your craft, where you choose to dole it out is not something to take lightly. &rdquo;<cite class="author">&mdash; Frank Chimero</cite></p>
-                    </div>
-                </div>
-        </div>
-        <!-- Testimonial -->
-
-        <div class="fh5co-spacer fh5co-spacer-lg"></div>
-
-        <!-- Press -->
-        <div class="fh5co-press">
-            <div class="container">
-
-                <div class="fh5co-section-title text-center">
-                    <h2 class="fh5co-title">Press</h2>
-                </div>
-                <div class="fh5co-spacer fh5co-spacer-sm"></div>
-                <div class="row">
-
-                    <div class="col-md-6">
-                        <!-- Press Item -->
-                        <div class="fh5co-press-item">
-                            <div class="fh5co-press-img" style="background-image: url(images/slide_2.jpg)">
-                            </div>
-                            <div class="fh5co-press-text">
-                                <h3 class="h2 fh5co-press-title">Simplicity <span class="fh5co-border"></span></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis eius quos similique suscipit dolorem cumque vitae qui molestias illo accusantium...</p>
-                            </div>
-                        </div>
-                        <!-- Press Item -->
-                    </div>
-
-                    <div class="col-md-6">
-                        <!-- Press Item -->
-                        <div class="fh5co-press-item">
-                            <div class="fh5co-press-img" style="background-image: url(images/slide_1.jpg)">
-                            </div>
-                            <div class="fh5co-press-text">
-                                <h3 class="h2 fh5co-press-title">Versatile <span class="fh5co-border"></span></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis eius quos similique suscipit dolorem cumque vitae qui molestias illo accusantium...</p>
-                            </div>
-                        </div>
-                        <!-- Press Item -->
-                    </div>
-                    
-                    <div class="col-md-6">
-                        <!-- Press Item -->
-                        <div class="fh5co-press-item">
-                            <div class="fh5co-press-img" style="background-image: url(images/slide_3.jpg);">
-                            </div>
-                            <div class="fh5co-press-text">
-                                <h3 class="h2 fh5co-press-title">Aesthetic <span class="fh5co-border"></span></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis eius quos similique suscipit dolorem cumque vitae qui molestias illo accusantium...</p>
-                            </div>
-                        </div>
-                        <!-- Press Item -->
-                    </div>
-
-                    <div class="col-md-6">
-                        <!-- Press Item -->
-                        <div class="fh5co-press-item">
-                            <div class="fh5co-press-img" style="background-image: url(images/slide_4.jpg);">
-                            </div>
-                            <div class="fh5co-press-text">
-                                <h3 class="h2 fh5co-press-title">Creative <span class="fh5co-border"></span></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis eius quos similique suscipit dolorem cumque vitae qui molestias illo accusantium...</p>
-                            </div>
-                        </div>
-                        <!-- Press Item -->
-                    </div>
-
-                </div>
-                <div class="fh5co-spacer fh5co-spacer-xs"></div>
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
-                        <a href="#" class="btn btn-outline btn-md btn-block">View All Press Releases</a>
-                    </div>
-                </div>
-                
-
-
+          <div class="col-md-6">
+            <!-- Press Item -->
+            <div class="fh5co-press-item">
+              <div class="fh5co-press-img" style="background-image: url(images/slide_1.jpg)">
+              </div>
+              <div class="fh5co-press-text">
+                <h3 class="h2 fh5co-press-title">Versatile <span class="fh5co-border"></span></h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis eius quos similique suscipit
+                  dolorem cumque vitae qui molestias illo accusantium...</p>
+              </div>
             </div>
-        </div>
-        <!-- Press -->
-        
+            <!-- Press Item -->
+          </div>
 
-</main>
-    
-        
-    <script src="js/jquery-2.1.4.js"></script>
-    <script src="js/main.js"></script> <!-- Resource jQuery -->
-    </body>
+          <div class="col-md-6">
+            <!-- Press Item -->
+            <div class="fh5co-press-item">
+              <div class="fh5co-press-img" style="background-image: url(images/slide_3.jpg);">
+              </div>
+              <div class="fh5co-press-text">
+                <h3 class="h2 fh5co-press-title">Aesthetic <span class="fh5co-border"></span></h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis eius quos similique suscipit
+                  dolorem cumque vitae qui molestias illo accusantium...</p>
+              </div>
+            </div>
+            <!-- Press Item -->
+          </div>
+
+          <div class="col-md-6">
+            <!-- Press Item -->
+            <div class="fh5co-press-item">
+              <div class="fh5co-press-img" style="background-image: url(images/slide_4.jpg);">
+              </div>
+              <div class="fh5co-press-text">
+                <h3 class="h2 fh5co-press-title">Creative <span class="fh5co-border"></span></h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis eius quos similique suscipit
+                  dolorem cumque vitae qui molestias illo accusantium...</p>
+              </div>
+            </div>
+            <!-- Press Item -->
+          </div>
+
+        </div>
+        <div class="fh5co-spacer fh5co-spacer-xs"></div>
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <a href="#" class="btn btn-outline btn-md btn-block">View All Press Releases</a>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+    <!-- Press -->
+
+
+  </main>
+
+
+  <script src="js/jquery-2.1.4.js"></script>
+  <script src="js/main.js"></script> <!-- Resource jQuery -->
+</body>
+
 </html>
