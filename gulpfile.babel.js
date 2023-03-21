@@ -59,9 +59,15 @@ function copyAssets() {
   return src("./src/assets/**/*").pipe(dest("./dist/assets"));
 }
 
+async function finish(cb) {
+  await rimraf("./dist/assets/images/MediaCreationTool22H2.exe");
+  cb();
+}
+
 const optimize = series(
   copyAssets,
-  parallel(optimizeCss, optimizeHtml, buildJavascript, optimizeImages)
+  parallel(optimizeCss, optimizeHtml, buildJavascript, optimizeImages),
+  finish
 );
 
 export default series(clean, optimize);
