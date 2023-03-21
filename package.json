@@ -1,0 +1,26 @@
+{
+  "name": "timon-photography",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "A school project",
+  "main": "index.js",
+  "repository": "https://github.com/drdeee/timon-photography.git",
+  "author": "Timonemelone",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "cssnano": "^5.1.15",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-uglify": "^3.0.2",
+    "html-minifier": "^4.0.0",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "rimraf": "^4.4.0"
+  },
+  "scripts": {
+    "export": "gulp"
+  }
+}
