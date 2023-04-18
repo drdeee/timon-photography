@@ -133,6 +133,9 @@ ul ul, ul ol, ol ul, ol ol {
     display: none;
   }
 }
+
+
+
 #fh5co-header #fh5co-nav {
   text-align: center;
 }
@@ -220,6 +223,13 @@ ul ul, ul ol, ol ul, ol ol {
 .fh5co-section-title .fh5co-title-sub,
 .fh5co-page-title .fh5co-title-sub {
   font-size: 20px;
+  font-weight: 300 !important;
+  line-height: 30px;
+  color: #7b7b7b;
+}
+.fh5co-section-title .fh5co-title-sub,
+.fh5co-page-title .fh5co-title-sub {
+  font-size: 50px;
   font-weight: 300 !important;
   line-height: 30px;
   color: #7b7b7b;
