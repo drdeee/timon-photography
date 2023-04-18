@@ -43,7 +43,7 @@ Stretchy Nav style - common to:
   pointer-events: none;
 }
 .cd-stretchy-nav .stretchy-nav-bg {
-  /* this is the stretching navigation background */
+  
   position: absolute;
   z-index: 1;
   top: 0;
@@ -73,21 +73,21 @@ Stretchy Nav style - common to:
   height: 60px;
   width: 60px;
   border-radius: 50%;
-  /* replace text with image */
+  
   overflow: hidden;
   white-space: nowrap;
   color: transparent;
   pointer-events: auto;
 }
 .cd-nav-trigger span, .cd-nav-trigger span::after, .cd-nav-trigger span::before {
-  /* this is the hamburger icon */
+  
   position: absolute;
   width: 16px;
   height: 2px;
   background-color: #ffffff;
 }
 .cd-nav-trigger span {
-  /* middle line of the hamburger icon */
+  
   left: 50%;
   top: 50%;
   bottom: auto;
@@ -102,7 +102,7 @@ Stretchy Nav style - common to:
   transition: background-color 0.2s;
 }
 .cd-nav-trigger span::after, .cd-nav-trigger span::before {
-  /* top and bottom lines of the hamburger icon */
+  
   content: '';
   top: 0;
   left: 0;
@@ -170,7 +170,7 @@ Stretchy Nav style - common to:
   transition: color 0.2s;
 }
 .cd-stretchy-nav ul a::after {
-  /* navigation item icons */
+  
   content: '';
   position: absolute;
   height: 16px;
@@ -185,7 +185,7 @@ Stretchy Nav style - common to:
   opacity: .6;
 }
 .cd-stretchy-nav ul a::before {
-  /* line visible next to the active navigation item */
+  
   content: '';
   position: absolute;
   width: 3px;
@@ -200,7 +200,7 @@ Stretchy Nav style - common to:
   background-color: #0a9581;
 }
 .cd-stretchy-nav ul li:first-of-type a::after {
-  /* change custom icon using image sprites */
+  
   background-position: -32px 0;
 }
 .cd-stretchy-nav ul li:nth-of-type(2) a::after {
@@ -216,7 +216,7 @@ Stretchy Nav style - common to:
   background-position: -16px 0;
 }
 .cd-stretchy-nav ul span {
-  /* navigation item labels */
+  
   display: block;
   opacity: 0;
   -webkit-transform: translateX(-25px);
@@ -230,7 +230,7 @@ Stretchy Nav style - common to:
   visibility: visible;
 }
 .cd-stretchy-nav.nav-is-visible ul a::after {
-  /* navigation item icons */
+  
   -webkit-transform: translateY(-50%) scale(1);
   -moz-transform: translateY(-50%) scale(1);
   -ms-transform: translateY(-50%) scale(1);
@@ -366,7 +366,7 @@ add-content navigation style
   background-color: transparent;
 }
 .cd-stretchy-nav.add-content .cd-nav-trigger span::before {
-  /* used to create the plus icon */
+  
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
@@ -374,7 +374,7 @@ add-content navigation style
   transform: rotate(90deg);
 }
 .cd-stretchy-nav.add-content .cd-nav-trigger span::after {
-  /* used to create the plus icon */
+  
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -414,7 +414,7 @@ add-content navigation style
   width: 60px;
 }
 .cd-stretchy-nav.add-content ul li:nth-of-type(2) {
-  /* space occupied by the navigation trigger */
+  
   margin-right: 60px;
 }
 .cd-stretchy-nav.add-content ul a {
@@ -486,7 +486,7 @@ add-content navigation style
   -webkit-transition: opacity 0.2s, visibility 0.2s;
   -moz-transition: opacity 0.2s, visibility 0.2s;
   transition: opacity 0.2s, visibility 0.2s;
-  /* reset default style */
+  
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
@@ -494,7 +494,7 @@ add-content navigation style
   transform: translateX(0);
 }
 .cd-stretchy-nav.add-content ul span::after {
-  /* triangle below the tooltip */
+  
   content: '';
   position: absolute;
   top: 100%;
@@ -512,7 +512,7 @@ add-content navigation style
 }
 
 .cd-stretchy-nav.add-content.nav-is-visible ul span {
-  /* reset default style */
+  
   -webkit-animation: none;
   -moz-animation: none;
   animation: none;
@@ -521,7 +521,7 @@ add-content navigation style
 .no-touch .cd-stretchy-nav.add-content.nav-is-visible ul a:hover span {
   opacity: 1;
   visibility: visible;
-  /* reset default style */
+  
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
@@ -535,7 +535,7 @@ edit content
 
 -------------------------------- */
 .cd-editable-content {
-  /* used to wrap the image and the navigation */
+  
   position: relative;
   width: 90%;
   max-width: 400px;
@@ -563,7 +563,7 @@ edit content
 .cd-stretchy-nav.edit-content.nav-is-visible .stretchy-nav-bg {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  /* reset default style */
+  
   box-shadow: none;
 }
 
@@ -590,11 +590,11 @@ edit content
   transform: rotate(45deg);
 }
 .cd-stretchy-nav.edit-content .cd-nav-trigger span, .cd-stretchy-nav.edit-content .cd-nav-trigger span::before, .cd-stretchy-nav.edit-content .cd-nav-trigger span::after {
-  /* used to create the 'X' icon when the navigation is open */
+  
   width: 12px;
 }
 .cd-stretchy-nav.edit-content .cd-nav-trigger::after {
-  /* edit icon */
+  
   content: '';
   position: absolute;
   height: 16px;
@@ -639,7 +639,7 @@ edit content
 }
 
 .cd-stretchy-nav.edit-content.nav-is-visible .cd-nav-trigger::after {
-  /* hide edit icon */
+  
   opacity: 0;
 }
 
@@ -691,7 +691,7 @@ edit content
   transition: opacity 0.2s, visibility 0.2s;
 }
 .cd-stretchy-nav.edit-content ul span::after {
-  /* triangle below the tooltip */
+  
   content: '';
   position: absolute;
   left: 100%;
@@ -709,7 +709,7 @@ edit content
 }
 
 .cd-stretchy-nav.edit-content.nav-is-visible ul span {
-  /* reset default style */
+  
   -webkit-animation: none;
   -moz-animation: none;
   animation: none;
@@ -717,7 +717,7 @@ edit content
 .no-touch .cd-stretchy-nav.edit-content.nav-is-visible ul a:hover span {
   opacity: 1;
   visibility: visible;
-  /* reset default style */
+  
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);

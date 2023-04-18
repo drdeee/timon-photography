@@ -154,7 +154,7 @@ textarea {
   appearance: none;
 }
 
-/* Basic */
+
 
 @-ms-viewport {
   width: device-width;
@@ -198,7 +198,7 @@ body.is-preload *:after {
   transition: none !important;
 }
 
-/* Type */
+
 
 html {
   font-size: 16pt;
@@ -428,7 +428,7 @@ hr {
   border-bottom-color: #eeeeee;
 }
 
-/* Row */
+
 
 .row {
   display: flex;
@@ -2129,7 +2129,7 @@ hr {
   }
 }
 
-/* Box */
+
 
 .box {
   border: solid 2px;
@@ -2153,7 +2153,7 @@ hr {
   border-color: #eeeeee;
 }
 
-/* Button */
+
 
 input[type="submit"],
 input[type="reset"],
@@ -2334,7 +2334,7 @@ button.primary:hover,
   background-color: #18bfef;
 }
 
-/* Form */
+
 
 form {
   margin: 0 0 2rem 0;
@@ -2642,7 +2642,7 @@ input[type="radio"]:focus + label:before {
   color: #909498 !important;
 }
 
-/* Icon */
+
 
 .icon {
   text-decoration: none;
@@ -2679,7 +2679,7 @@ input[type="radio"]:focus + label:before {
   font-family: "Font Awesome 5 Brands";
 }
 
-/* Image */
+
 
 .image {
   border: 0;
@@ -2769,7 +2769,7 @@ a.image:hover img {
   transform: scale(1.05);
 }
 
-/* Actions */
+
 
 ul.actions {
   display: -moz-flex;
@@ -2889,7 +2889,7 @@ ul.actions.fit.stacked {
   }
 }
 
-/* Icons */
+
 
 ul.icons {
   cursor: default;
@@ -2929,7 +2929,7 @@ ul.icons.alt li .icon:before {
   font-size: 1rem;
 }
 
-/* List */
+
 
 ol {
   list-style: decimal;
@@ -2996,7 +2996,7 @@ ul.icons.alt li a.icon:hover:before {
   box-shadow: inset 0 0 0 2px #18bfef;
 }
 
-/* Section/Article */
+
 
 section.special,
 article.special {
@@ -3094,7 +3094,7 @@ header.major .date:after {
   border-top-color: #eeeeee;
 }
 
-/* Wrapper */
+
 
 #wrapper {
   -moz-transition: opacity 0.5s ease;
@@ -3160,7 +3160,7 @@ body.is-preload #wrapper.fade-in:before {
   }
 }
 
-/* Intro */
+
 
 #intro {
   color: #ffffff;
@@ -3374,7 +3374,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   }
 }
 
-/* Header */
+
 
 #header {
   color: #ffffff;
@@ -3495,7 +3495,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   }
 }
 
-/* Nav */
+
 
 #nav {
   color: #ffffff;
@@ -3651,7 +3651,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   }
 }
 
-/* Main */
+
 
 #main {
   background-color: #ffffff;
@@ -3833,7 +3833,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   }
 }
 
-/* Footer */
+
 
 #footer {
   color: #717981;
