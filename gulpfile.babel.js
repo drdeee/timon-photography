@@ -66,7 +66,7 @@ async function finish(cb) {
 
 const optimize = series(
   copyAssets,
-  parallel(optimizeCss, optimizeHtml, buildJavascript, optimizeImages),
+  parallel(optimizeCss, optimizeHtml, buildJavascript),
   finish
 );
 
